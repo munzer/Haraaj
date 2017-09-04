@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<style>
+			.EmailHeader{
+				width:100%;
+				Height:auto;
+				float:right;
+				background:#2F2933;
+				padding:10px 0px;
+				text-align:center;
+				font-size:14px;
+				color:#fff;
+				border-bottom:2px solid #ccc;
+				direction:rtl;
+			}
+			
+			.EmailLogo{
+				height:30px;
+				margin-bottom:10px;
+			}
+			
+			.EmailTitle{
+				text-align:center;
+				color:#777;
+				font-size:15px;
+				margin-top:30px;
+				width:100%;
+				float:right;
+				font-weight:bold;
+				direction:rtl;
+			}
+			
+			.EmailContent{
+			width:80%;
+			float:right;
+			margin:30px 10%;
+			text-align:Center;
+			color:#888;
+			border-top:1px solid #f0f0f0;
+			border-bottom:1px solid #f0f0f0;
+			padding:10px 0px;
+			direction:rtl;
+			}
+			
+			.EmailFooter{
+			width:80%;
+			float:right;
+			margin:30px 10%;
+			text-align:Center;
+			color:#999;
+			font-size:11px;
+			padding:10px 0px;
+			direction:rtl;
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<Div class="EmailHeader">
+	<img src="{{LOGO}}" class="EmailLogo" />
+	</br>
+	{{WEBSITENAME}}
+	</div>
+	
+		<div class="EmailTitle">{{TITLE}}</div>
+		
+			<div class="EmailContent">
+			{{CONTENT}}
+			</div>	
+			
+			<div class="EmailFooter">
+			{{FOOTER}}
+			</div>
+		
+	
+	</body>
+</html>

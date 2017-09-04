@@ -1,0 +1,14 @@
+.ReservationDashboardCel{
+width:96%;
+float:Right;
+background:#fff;
+min-height:60px;
+margin-top:5px;
+padding:10px 2%;
+}
+
+.NewReservirationBut{
+float:right;
+margin:40px 0px 40px 30px;
+padding:6px 20px;
+}

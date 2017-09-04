@@ -1,0 +1,114 @@
+.PaymentPageNotice{
+width:96%;
+padding:20px 2%;
+float:right;
+background:#FF8C00;
+margin-bottom:5px;
+text-align:right;
+font-size:13px;
+color:#fff;
+}
+
+.PaymentPageNotice img{float:right;width:25px;margin:2px;}
+	
+.pricesContenerBody{
+width:80%;
+float:right;
+min-height:200px;
+margin:10px 10%;
+}
+
+.PaySubscriptionNotic{
+width:96%;
+float:right;
+background:#FF8C00;
+padding:15px 2%;
+text-align:right;
+font-size:14px;
+color:#fff;
+margin-bottom:10px;
+}
+
+.PackageOffer{
+width:96%;
+float:right;
+background:#fff;
+margin-top:0px;
+padding:10px 2%;
+}
+
+.PackageOffer:hover{width:98%;margin:4px -1%;padding:14px 2%;}
+
+.PackageOffer price{
+width:70px;
+height:70px;
+line-height:70px;
+text-align:center;
+float:right;
+margin-left:20px;
+background:#BDF271;
+color:#666;
+border-radius:100px;
+font-size:14px;
+font-weight:bold;
+}
+
+.PackageOffer packageTitle{
+width:30%;
+float:right;
+font-size:14px;
+color:#555;
+text-align:right;
+line-height:70px;
+}
+
+.PackageOffer button{
+float:left;
+margin-top:20px;
+}
+
+.ChoseYourPaymentMethod{
+width:46%;
+padding:10px 2%;
+text-align:right;
+float:right;
+height:auto;
+float:right;
+background:#fff;
+margin:50px 25%;	
+border-radius:2px;
+}
+
+.ChoseYourPaymentMethod description{
+width:100%;
+float:right;
+padding:10px 0px;
+color:#777;
+font-size:14px;
+border-bottom:1px solid #ccc;
+}
+
+.ChoseYourPaymentMethod cell{
+width:100%;
+float:right;
+padding:10px 0px;
+color:#777;
+font-size:14px;
+font-size:13px;
+font-weight:bold;
+margin-top:5px;
+}
+
+.ChoseYourPaymentMethod cell:hover{background:#f9f9f9;}
+	
+.ChoseYourPaymentMethod cell img{
+width:25px;
+float:right;
+margin-left:10px;
+margin-right:5px;
+}
+
+@media screen and (max-width:500px){ 
+.ChoseYourPaymentMethod{width:96%;margin:60px 0px;}
+
+}

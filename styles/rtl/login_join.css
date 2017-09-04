@@ -1,0 +1,134 @@
+.login_join_contener{
+width:40%;
+min-height:200px;
+background:#fff;
+float:right;
+margin:50px 27% 0px 27%;
+padding:40px 3%;
+}
+
+.LoginErrorSBox{
+width:40%;
+background:#E95450;
+float:right;
+margin:30px 27% -45px 27%;
+padding:15px 3%;
+opacity:0.9;
+display:none;
+}
+
+.LoginErrorSBox img{
+width:25px;float:right;margin-top:5px;
+}
+.LoginErrorSBox span{
+float:right;
+margin:5px 10px;
+font-size:14px;
+color:#fff;
+}
+
+.JLFormTitle{
+width:100%;
+float:right;
+height:100px;	
+text-align:right;
+}
+
+.JLFormTitle h1{
+min-width:51%;
+max-width:70%;
+float:right;
+height:40px;	
+font-size:17px;
+color:#555;
+margin:0px;
+font-weight:normal;
+}
+.JLFormTitle h2{
+min-width:51%;
+max-width:70%;
+float:right;
+height:40px;	
+font-size:12px;
+color:#777;
+margin:0px;
+font-weight:normal;
+}
+.JLFormTitle img{
+width:50px;
+float:left;
+opacity:0.5;
+}
+
+.login_join_contener button{
+padding:6px 30px;float:left;margin-top:20px;
+}
+
+.Login_Joing_HelpBox{
+width:40%;
+background:#fff;
+float:right;
+margin:1px 27% 0px 27%;
+padding:20px 3%;
+opacity:0.8;
+text-align:right;
+font-size:12px;
+color:#777;
+}
+
+.Login_Joing_HelpBox:Hover{opacity:1;}
+
+.Login_Joing_HelpBox span{color:#4C8AF4;}
+
+.JoinTermsEccept{
+width:100%;
+float:right;
+margin-bottom:20px;
+text-align:right;
+color:#2E0927;
+font-size:11px;
+}
+
+.JoinTermsEccept openTerms{
+color:#FF8C00;
+font-weight:bold;
+cursor:pointer;
+}
+
+JoinTerms{
+display:none;
+width:96%;
+padding:10px 2%;
+background:#FFFFA6;
+color:#444;
+float:right;
+margin-top:10px;
+}	
+
+.loginUsingSocialBox{
+width:100%;
+float:right;
+padding:0px  0px;
+margin-top:10px;
+}
+
+.loginUsingSocialBox cel{
+width:100%;
+float:right;
+height:40px;
+color:#666;
+margin-top:5px;
+text-align:Right;
+font-size:12px;
+opacity:0.7;
+cursor:pointer;
+}
+
+.loginUsingSocialBox cel:hover{opacity:1;}
+
+.loginUsingSocialBox cel img{float:right;margin-left:7px;width:30px;margin-top:0px;}
+
+@media screen and (max-width:500px){ 
+.login_join_contener{width:90%;margin:50px 0px 0px 0px;padding:10px 5%;}
+.Login_Joing_HelpBox{width:90%;margin:2px 0px;padding:15px 5%;}
+}

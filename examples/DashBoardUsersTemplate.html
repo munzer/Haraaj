@@ -1,0 +1,354 @@
+﻿<html>
+<head>
+<title>DUAST Frame Work</title>
+<script type="text/javascript" src="jq.js"></script>
+<script type="text/javascript" src="js/animation.js"></script>
+
+	<link rel="stylesheet" href="styles/rtl/style.css" type="text/css" />
+	<link rel="stylesheet" href="styles/animate.css" type="text/css" />
+	
+</head>
+
+
+
+
+<body>
+
+<script>
+/// M
+$.fn.ApplayMaterialDesignForm = function(options){
+var defaults = {  
+AutoCheck:"XX"
+};
+	/// Validation By Jquery
+	var Form = this;
+	Form.children("input").each(function(){
+		if($(this).attr("input-type").split("||")[0] == "datepicker"){
+			Feld = $(this);
+				DayHolder   = $(this).attr("day-holder");
+				MonthHolder = $(this).attr("month-holder");
+				YearHolder  = $(this).attr("year-holder");
+			Feld.css("display","none");
+			Feld.wrap("<div class='InputPattern1'>");
+			Feld.before("<label style='color:#777;'>"+Feld.attr("input-holder")+"</label>");
+			Feld.after("<error></error>");
+			Feld.before("<datePiker><dayPick>"+DayHolder+"</dayPick><monthPick>"+MonthHolder+"</monthPick><yearPick>"+YearHolder+"</yearPick></datePiker>");
+				Feld.prev("datePiker").find("dayPick,monthPick,yearPick").click(function(){
+				$(this).ConvertToDatePicker();
+				});
+		}else{
+			Feld = $(this);
+			Feld.wrap("<div class='InputPattern1'>");
+			Feld.before("<label></label>");
+			Feld.after("<error></error>");
+			Feld.attr("placeholder",Feld.attr("input-holder"));
+		}
+	});
+	
+	
+	/// Date Picker Picke
+	$.fn.ConvertToDatePicker = function(){
+	var targetPick = this.prop("tagName").toLowerCase();
+		var PickerHolder = this;
+		$("#DatePicker").find(".datePikerLightBoxContener cells").html("");
+		if (targetPick == "daypick") {
+		var windowsTitle = "please select day";
+		for(i=1;i<=30;i++){ $("#DatePicker").find(".datePikerLightBoxContener cells").append("<day>"+i+"</day>"); }
+			$("#DatePicker").find("day").click(function(){
+			$(this).css("background","#2F2933");
+			$(this).css("color","#fff");
+			var DayValue = $(this).html();
+			PickerHolder.html("<b>"+DayValue+"</b>");
+			Duanimate("#DatePicker","hide","pulse","500");
+			PickerParints.attr("day",DayValue);
+			});
+		}else if (targetPick == "monthpick") {
+		var windowsTitle = "please select a month";
+		for(i=1;i<=12;i++){ $("#DatePicker").find(".datePikerLightBoxContener cells").append("<month>"+i+"</month>"); }
+			$("#DatePicker").find("month").click(function(){
+			$(this).css("background","#2F2933");
+			$(this).css("color","#fff");
+			var MonthValue = $(this).html();
+			PickerHolder.html("<b>"+MonthValue+"</b>");
+			Duanimate("#DatePicker","hide","pulse","500");
+			PickerParints.attr("month",MonthValue);
+			});
+		}else if (targetPick == "yearpick") {
+		var windowsTitle = "please select a year";
+		for(i=2017;i>=1940;i--){ $("#DatePicker").find(".datePikerLightBoxContener cells").append("<year>"+i+"</year>");
+		}
+			$("#DatePicker").find("year").click(function(){
+			$(this).css("font-weight","bold");
+			var YearValue = $(this).html();
+			PickerHolder.html("<b>"+YearValue+"</b>");
+			Duanimate("#DatePicker","hide","pulse","500");
+			PickerParints.attr("year",YearValue);
+			});
+		}
+	}
+	
+	
+
+
+			// The animation When foucos In
+			Form.find("input").focusin(function(){
+			input_holder         = $(this).attr("input-holder");
+				$(this).css("border-bottom","2px solid #2F2933");
+				$(this).prev("label").css("color","#2F2933");
+				$(this).prev("label").html(input_holder);
+				var label = $(this).prev("label");
+				$(this).attr("placeholder","");
+				Duanimate(label,"none","flipInX","400");
+			});
+			
+			// The animation When foucos Out
+			Form.find("input").focusout(function(){
+			input_holder         = $(this).attr("input-holder");
+				$(this).prev("label").css("color","#666");
+				var placeholder = $(this).attr("input-holder");
+				var inputValue  = $(this).val().trim();
+				var error_empty = $(this).attr("error-empty");
+			});
+		
+	
+	Form.submit(function(){
+	Form.find("input").each(function(){
+	$(this).ChekInputErrors();
+	});
+	return false;
+	});
+};
+
+
+	//// Check For Every Errors In Inputs Filds
+	$.fn.ChekInputErrors = function(){
+	Error_holder         = this.next("error");
+	InputValue           = this.val();
+	input_holder         = this.attr("input-holder");
+	input_type           = this.attr("input-type");
+	input_min            = this.attr("input-min");
+	input_max            = this.attr("input-max");
+	input_required       = this.attr("input-required");
+
+
+		//// Check If Input Empty
+		if (typeof input_required !== typeof undefined && input_required !== false) {
+		input_required_Error = this.attr("input-required").split("||")[1];
+		input_required_Set   = this.attr("input-required").split("||")[0];
+		if(input_required_Set=="true"){
+			if(InputValue==""){
+			Error_holder.html(input_required_Error);
+			return false;
+			}else{
+			Error_holder.html("");
+			}
+		}
+		}
+		
+		//// Check The Minimum length Of Input
+		if (typeof input_min !== typeof undefined && input_min !== false) {
+			input_min_Error      = this.attr("input-min").split("||")[1];
+			input_min_set      = this.attr("input-min").split("||")[0];
+			if(InputValue.length<input_min_set){
+				Error_holder.html(input_min_Error);
+				return false;
+			}else{
+				Error_holder.html("");
+			}
+		}
+				
+		//// Check The Maximum length Of Input
+		if (typeof input_max !== typeof undefined && input_max !== false) {
+			input_max_Error    = this.attr("input-max").split("||")[1];
+			input_max_set      = this.attr("input-max").split("||")[0];
+			if(InputValue.length>input_max_set){
+				Error_holder.html(input_max_Error);
+				return false;
+			}else{
+				Error_holder.html("");
+			}
+		}
+		
+		//// Check The Type Of Input
+		if (typeof input_type !== typeof undefined && input_type !== false) {
+			input_type_Error = this.attr("input-type").split("||")[1];
+			input_type_Set   = this.attr("input-type").split("||")[0];
+		if(input_type_Set=="string"){
+			if(/^[a-zA-Z0-9-]*$/.test(InputValue) == false || InputValue=="") {
+			Error_holder.html(input_type_Error);
+			}else{
+			Error_holder.html("");
+			}
+		}else if(input_type_Set=="text"){
+			if(/^[a-zA-Z0-9-]*$/.test(InputValue) == false || InputValue=="") {
+			Error_holder.html(input_type_Error);
+			}else{
+			Error_holder.html("");
+			}
+		}else if(input_type_Set=="email" || InputValue==""){
+			if(!InputValue.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+			Error_holder.html(input_type_Error);
+			}else{
+			Error_holder.html("");
+			}
+		}else if(input_type_Set=="number" || InputValue==""){
+			if(!$.isNumeric(InputValue)){
+			Error_holder.html(input_type_Error);
+			}else{
+			Error_holder.html("");
+			}
+		}
+		}
+		
+
+	}
+	
+	
+</script>
+
+
+	
+<div class="login_join_contener" style="width:40%;background:#fff;float:Right;margin:10px 20%;padding:10px 5%;">
+	<form actionpage="actions.php?join" id="JoinForm">
+	
+
+	<input data-para="user_name" input-type="string||Error Just Text" input-holder="الاسم" input-required="true||this fild is required" input-min="6||you most not max more than6" input-max="10||just 10">
+	
+	<input data-para="user_name" input-type="string||Error Just Text" input-holder="العنوان" input-required="true||this fild is required" input-min="6||you most not max more than6" input-max="10||just 10">
+	
+	<input data-para="user_name" input-type="email||Error Just Email" input-holder="البريد" input-required="true||this fild is required" input-min="6||you most not max more than6" input-max="10||just 10">
+	
+	<input data-para="user_name" input-type="number||Error Just Numbers" input-holder="رقم الهاتف" input-required="true||this fild is required" input-min="6||you most not max more than6" input-max="10||just 10">	
+	
+	<input data-para="user_name" input-type="datepicker||Pease Fill Your Birth Day" input-holder="الميلاد" input-required="true||this fild is required" day-holder="Day" month-holder="Month" year-holder="year">
+
+	
+	
+	<button class="buttonPattern1 shadow1" actiontype="submit">تسجيل حساب</button>
+	
+	</form>
+	<script>
+	$("#JoinForm").ApplayMaterialDesignForm({
+	
+	});
+		//// Check For Every Errors In Inputs Filds
+	$.fn.ChekInputErrors = function(){
+	Error_holder         = this.next("error");
+	InputValue           = this.val();
+	input_holder         = this.attr("input-holder");
+	input_type           = this.attr("input-type");
+	input_min            = this.attr("input-min");
+	input_max            = this.attr("input-max");
+	input_required       = this.attr("input-required");
+	input_repassword     = this.attr("input-repassword");
+
+
+		//// Check If Input Empty
+		if (typeof input_required !== typeof undefined && input_required !== false) {
+		input_required_Error = this.attr("input-required").split("||")[1];
+		input_required_Set   = this.attr("input-required").split("||")[0];
+		if(input_required_Set=="true"){
+			if(InputValue==""){
+			Error_holder.html(input_required_Error);
+			return false;
+			}else{
+			Error_holder.html("");
+			}
+		}
+		}
+		
+		//// Check The Minimum length Of Input
+		if (typeof input_min !== typeof undefined && input_min !== false) {
+			input_min_Error      = this.attr("input-min").split("||")[1];
+			input_min_set      = this.attr("input-min").split("||")[0];
+			if(InputValue.length<input_min_set){
+				Error_holder.html(input_min_Error);
+				return false;
+			}else{
+				Error_holder.html("");
+			}
+		}
+				
+		//// Check Feld is repassword
+		if (typeof input_repassword !== typeof undefined && input_repassword !== false) {	
+		var indexFeld = $(input_repassword).val();
+		var input_repassword_Error    = this.attr("input-repassword").split("||")[1];
+		var input_repassword_set      = this.attr("input-repassword").split("||")[0];
+		if(this.val()!==indexFeld){
+		Error_holder.html(input_repassword_Error);
+		}else{
+		Error_holder.html();	
+		}
+		}
+		
+		//// Check The Maximum length Of Input
+		if (typeof input_max !== typeof undefined && input_max !== false) {
+			input_max_Error    = this.attr("input-max").split("||")[1];
+			input_max_set      = this.attr("input-max").split("||")[0];
+			if(InputValue.length>input_max_set){
+				Error_holder.html(input_max_Error);
+				return false;
+			}else{
+				Error_holder.html("");
+			}
+		}
+		
+		//// Check The Type Of Input
+		if (typeof input_type !== typeof undefined && input_type !== false) {
+			input_type_Error = this.attr("input-type").split("||")[1];
+			input_type_Set   = this.attr("input-type").split("||")[0];
+		if(input_type_Set=="string"){
+			if(/^[a-zA-Z0-9-]*$/.test(InputValue) == false || InputValue=="") {
+			Error_holder.html(input_type_Error);
+			}else{
+			Error_holder.html("");
+			}
+		}else if(input_type_Set=="text"){
+			if(/^[a-zA-Z0-9-]*$/.test(InputValue) == false || InputValue=="") {
+			Error_holder.html(input_type_Error);
+			}else{
+			Error_holder.html("");
+			}
+		}else if(input_type_Set=="email" || InputValue==""){
+			if(!InputValue.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+			Error_holder.html(input_type_Error);
+			}else{
+			Error_holder.html("");
+			}
+		}else if(input_type_Set=="number" || InputValue==""){
+			if(!$.isNumeric(InputValue)){
+			Error_holder.html(input_type_Error);
+			}else{
+			Error_holder.html("");
+			}
+		}else if(input_type_Set=="password" || InputValue==""){
+			Error_holder.html("");
+		}
+		}
+		
+
+	}
+	</script>
+
+	
+</div>
+
+
+	
+	
+		<div class="lightBox" id="DatePicker">
+	<div class="lightBoxBody shadow3">
+	<div class="lightBoxBodyTitleBar"><st>kk</st><img class="lightBoxBodyTitleBarClose" src="img/w/close.png"/></div>
+	<div class="datePikerLightBoxContener">
+	<cells></cells>
+	</div>
+	</div>
+	</div>
+	
+
+
+	
+</body>
+
+
+</html>

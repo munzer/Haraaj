@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>DUAST Frame Work</title>
+<script type="text/javascript" src="../jq.js"></script>
+<script type="text/javascript" src="../js/animation.js"></script>
+	<link rel="stylesheet" href="../styles/rtl/style.css" type="text/css" />
+	<link rel="stylesheet" href="../styles/animate.css" type="text/css" />
+	
+	<style>
+	.DuTemplateContenet{
+	width:400px;
+	min-height:400px;
+	float:right;
+	background:#fff;
+	margin:100px 35%;
+	}
+	
+	
+	.DuTemplateContenet block{
+	display:none;
+	}
+	
+	.DashBoardUsersCell{
+	width:100%;
+	float:Right;
+	background:#ccc;
+	margin-bottom:5px;
+	min-height:50px;
+	}
+	
+	</style>
+	
+</head>
+<body>
+
+<?
+include("../config.php");
+include("DuTemplateSystem.php");
+$DuTemplate = new DuTemplate();
+
+require_once("../functions/master.php");
+$sessions = new sessions();
+$sessions->me();
+$uid = $sessions->id;
+/// Initializing The Language File
+include("../lang/ar.php");
+$L = new Lang;
+// Example To Get Word : $L->Key("love");
+
+?>
+
+
+<div class="DuTemplateContenet"
+loop-field="user_name,user_email"
+loop-table="users"
+loop-limit="3"
+loop-sortBy="user_id"
+loop-sortType="Up"
+loop-filter=""
+>
+
+<block>
+<div class='DashBoardUsersCell'>
+<span>{user_name}</span>
+</br>
+<span>{user_email}</span>
+</div>
+</block>
+
+
+</div>
+
+
+<script>
+$.fn.DuBuildTemplate = function(options){
+
+var defaults = {  
+TaskStart: function () {},
+TaskEnd: function () {}
+};
+
+var options = $.extend(defaults, options);
+
+	
+var LoopField    = $(this).attr("loop-field");
+var LoopTable    = $(this).attr("loop-table");
+var LoopLimit    = $(this).attr("loop-limit");
+var LoopSortBy   = $(this).attr("loop-sortBy");
+var LoopSortType = $(this).attr("loop-sortType");
+var LoopFilter   = $(this).attr("loop-filter");
+var LoopContener = $(this);
+
+TaskStart = function(){
+
+$.post("../actions.php?DuBuildTemplate=Html&field="+LoopField+"&table="+LoopTable+"&limit="+LoopLimit+"&sort_by="+LoopSortBy+"&sort_type="+LoopSortType+"&filter="+LoopFilter,function(Data){
+var response = jQuery.parseJSON(Data);
+	$.each(response, function(key,value) {
+	  var LoopCel     = LoopContener.children("block").html();
+	  
+var matches = LoopCel.match(/\{.*?\}/g);
+for (i=0; i<matches.length; i++) {
+replacedWords       = matches[i].replace(/}|\{/g,'');
+replacedWordsString = replacedWords.toString();
+LoopCel = LoopCel.replace("{"+replacedWords+"}",value[replacedWordsString]);
+///alert(value[replacedWordsString]);
+}
+	LoopContener.append(LoopCel);
+	}); 
+});
+
+}();
+
+
+
+
+};
+
+$(".DuTemplateContenet").DuBuildTemplate({
+Starting:function(){},
+Loading:function(){},
+End:function(){},
+});
+</script>

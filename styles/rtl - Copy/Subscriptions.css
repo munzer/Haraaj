@@ -1,0 +1,31 @@
+.FullWidthCover{
+width:100%;
+float:right;
+}
+
+.SubscriptionsCoverImage{
+width:40%;
+float:left;
+margin-top:50px;
+}
+
+.SubscriptionsText{
+width:50%;
+float:right;
+margin-top:50px;
+text-align:right;
+color:#2F2933;
+}
+
+.SubscriptionsGoToBut{
+float:right;
+margin-top:20px;
+padding:8px 18px;
+}
+
+@media screen and (max-width:500px){ 
+.SubscriptionsCoverImage{width:90%;margin:30px 5%;}
+.SubscriptionsText{width:90%;margin:20px 5%;}
+.SubscriptionsText h1{font-size:13px;}
+.SubscriptionsGoToBut{margin:20px 5%;}
+}

@@ -1,0 +1,181 @@
+
+
+.activition_box{
+width:60%;
+height:auto;
+background:#fff;	
+float:right;
+margin:100px 20% 0px 20%;
+border-radius:1px;
+}
+
+.activition_title{
+width:92%;
+padding:10px 4%;
+height:40px;
+line-height:40px;
+float:right;
+color:#fff;
+background:#29D9C2;
+font-size:13px;
+margin-bottom:10px;
+border-bottom:1px solid #F0F0F0;
+text-align:right;
+}
+
+.activition_note{
+width:90%;
+height:auto;
+float:right;
+color:#888;
+font-size:12px;
+margin:15px 5%;
+direction:rtl;
+}
+
+.activition_box input{
+width:90%;
+height:40px;
+background:transparent;
+color:#666;	
+float:right;
+font-size:12px;
+text-align:right;
+margin:20px 5% 0px 5%;
+border-bottom:2px solid #2F2933;
+border-top:0px;
+border-right:0px;
+border-left:0px;
+}
+
+.activition_box button{
+width:auto;
+height:36px;
+line-height:30px;
+float:left;
+margin:30px 5% 30px 5%;
+background:#2F2933;
+border:0;
+font-size:12px;
+border-radius:2px;
+color:#fff;
+cursor:pointer;
+
+}
+
+.activition_proplems{
+width:54%;
+height:auto;
+background:#FCFCFC;	
+float:right;
+color:#fff;
+margin:20px 20%;
+padding:2px 3%;
+text-align:right;
+}
+.activition_proplems_title{
+width:100%;
+height:40px;
+float:right;
+color:#666;
+font-size:12px;
+margin-top:15px;
+border-bottom:1px solid #F0F0F0;
+cursor:pointer;
+
+}
+.resend_activation_email{
+width:79%;
+height:40px;
+float:right;
+color:#666;
+font-size:12px;
+margin:0px 11% 5px 11%;
+text-align:right;
+}
+
+.edit_email{
+width:79%;
+height:40px;
+float:right;
+color:#666;
+font-size:12px;
+margin:0px 11% 5px 11%;
+text-align:right;
+border:1px solid #ccc;
+}
+
+.edit_email input{
+width:70%;
+height:40px;
+text-align:right;
+border:0px;
+margin:0px;
+float:right;
+background:transparent;
+padding:0px 1%;
+}
+.edit_email button{
+width:25%;
+height:40px;
+text-align:center;
+border:0px;
+margin:0px;
+float:left;
+background:#4CB848;
+border-radius:0px;
+cursor:pointer;
+}
+
+
+.activition_proplems_option{
+width:78%;
+height:20px;
+float:right;
+color:#666;
+font-size:12px;
+margin:0px 11% 5px 11%;
+padding:15px 0.5%;
+background:#f8f8f8;
+text-align:right;
+border-bottom:1px solid #F0F0F0;
+cursor:pointer;
+}
+.activition_proplems_option img{
+width:18px;float:right;margin:3px 10px;
+}
+
+.singerActiveLogout{
+width:auto;
+height:auto;
+line-height:30px;
+right:0px;
+top:0px;
+margin:20px;
+background:#F8A5A9;
+border:0;
+font-size:12px;
+border-radius:2px;
+color:#fff;
+cursor:pointer;
+padding:0px 15px;
+position:absolute;
+}
+.singerActiveLogout img{
+width:15px;float:right;margin:8px;
+}
+
+.YourActivationState{
+width:50%;
+padding:20px 3%;
+float:right;
+background:#1CA665;
+margin:130px 25%;
+font-size:13px;
+text-align:right;
+color:#fff;
+}
+
+.YourActivationState img{
+width:25px;float:right;margin-left:20px;
+}

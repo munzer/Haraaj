@@ -1,0 +1,313 @@
+.PrimaryMenu{
+width:100%;
+float:right;
+margin-top:30px;
+padding:5px 0%;
+color:#2E0927;
+font-size:14px;
+background:#FF8C00;
+}
+
+.PrimaryMenu cel img{
+width:20%;
+float:right;
+margin:10px 40%;
+}
+
+.PrimaryMenu cel{
+float:right;
+height:80px;
+width:14%;
+line-height:30px;
+text-align:center;
+margin:0px 1.1%;
+color:#fff;
+}
+
+
+.PrimeContentBlock{
+width:23%;
+height:300px;
+background:#fff;
+float:right;
+margin-left:2%;
+margin-top:20px;
+}
+
+.PrimeContentBlock thumb{
+width:100%;
+height:200px;
+border-radius:0px;
+background-color:#FF8C00;
+float:right;
+}
+
+.PrimeContentBlock theTitle{
+width:90%;
+padding:10px 5%;
+float:right;
+text-align:right;
+font-size:14px;
+color:#444;
+}
+
+.PrimeContentBlock button{
+float:left;
+padding:3px 15px;
+margin-left:5%;
+background:#FF8C00;
+border:0px;
+font-size:12px;
+border-radius:2px;
+color:#fff;
+}
+
+.contentPageContener{
+width:100%;
+float:right;
+margin-top:50px;
+}
+
+.contentPageContener ContentSide{
+width:65%;
+float:left;
+background:#fff;
+min-height:300px;
+padding:10px 0%;
+}
+
+.contentPageContener ContentBody{
+width:100%;
+float:left;
+background:#000;
+min-height:400px;
+}
+
+.contentPageContener sideBar{
+width:31%;
+float:right;
+background:#fff;
+min-height:300px;
+padding:10px 1%;
+}
+
+.contentTitle{
+width:96%;
+font-size:13px;
+color:#666;
+float:right;
+border-bottom:1px solid #F0F0F0;	
+text-align:right;
+padding:7px 2%;
+margin-bottom:5px;
+}
+
+.shareBut{
+width:150px;
+height:40px;
+margin:10px 2% 0px 2%;
+float:right;
+text-align:right;
+font-size:12px;
+cursor:pointer;
+}
+
+.shareBut icon{
+width:35px;
+height:35px;
+float:right;
+border-radius:100px;
+background:#000;
+margin-left:10px;
+}
+.shareBut icon img{
+width:20px;
+margin:7px;
+float:right;
+}
+.shareBut text{
+float:right;
+margin-top:5px;
+}
+
+.shareButsContener{
+width:96%;
+padding:5px 2%;
+float:right;
+display:none;
+margin-top:10px;
+}
+
+.shareButsContener but{
+width:22px;
+height:22px;
+background:#FF8C00;
+float:right;
+padding:9px;
+border-radius:100px;
+margin-left:20px;
+}
+
+.shareButsContener but img{
+width:17px;
+margin:3px;
+}
+
+.suggestedPost{
+width:96%;
+padding:5px 2%;
+float:right;
+margin-bottom:10px;
+opacity:0.4;
+}
+
+.suggestedPost:hover{
+opacity:0.9;
+}
+
+.suggestedPost thumb{
+width:80px;
+height:80px;
+float:right;
+background-color:#000;
+border-radius:0px;
+}
+
+.suggestedPost suggestedTitle{
+float:right;
+text-align:right;
+font-size:14px;
+color:#666;
+padding:10px 5%;
+min-width:50%;
+}
+
+.suggestedPost button{
+float:left;
+padding:3px 15px;
+margin-left:5%;
+background:#FF8C00;
+border:0px;
+font-size:12px;
+border-radius:2px;
+color:#fff;
+}
+
+.FilterMenu{
+width:100%;
+height:90px;
+background:#;
+float:right;	
+}
+
+.FilterMenu FilterCel{
+width:190px;
+float:left;
+margin:5px 2%;
+color:#444;
+}
+
+.FilterMenu FilterCel key{
+width:100%;
+margin:5px 0px;
+float:right;
+font-size:13px;
+text-align:right;
+}
+.FilterMenu FilterCel but{
+width:auto;
+margin-left:4%;
+padding:3px 8%;
+margin-top:5px;
+float:right;
+font-size:12px;
+text-align:right;
+cursor:pointer;
+}
+
+.ClickedFilterBut{
+background:#FF8C00;
+color:#fff;
+border-radius:2px;	
+}
+
+.AddNewPostBody{
+width:76%;
+margin:50px 10%;
+padding:10px 2%;
+float:right;
+min-height:20px;
+background:#fff;
+}
+
+.addNewContentPartition{
+width:96%;
+float:right;
+padding:10px 2%;
+background:#fff;
+margin-bottom:10px;
+}
+
+.addNewContentPartitionTitle{
+width:100%;
+float:right;
+padding:10px 0%;
+text-align:right;
+font-size:13px;
+color:#FF8C00;
+}
+
+.addNewContentPartitionTitle Check{
+width:15px;
+height:15px;
+border:1px solid #FF8C00;
+float:right;
+margin-left:10px;
+margin-top:5px;
+border-radius:100px;
+}
+
+
+.PostThumbUploadArea{
+width:100%;
+float:right;
+margin:10px 0px;
+}
+
+.PostThumbUplodedCel{
+width:90px;
+float:right;
+height:90px;
+background-color:#FFFFA6;	
+margin-right:10px;
+margin-bottom:10px;
+cursor:pointer;
+border-radius:0px;
+}
+
+.PostThumbUplodedCel img{
+width:15px;
+float:right;
+margin:5px;
+padding:5px;
+border-radius:2px;
+background:#FF8C00;
+display:none;
+}
+
+.PostThumbUplodedCel:Hover img{
+display:block;
+}
+
+.UploadImgToPostBut{
+width:auto;
+float:left;
+}
+
+@media screen and (max-width:500px){ 
+.PrimaryMenu cel{width:96%;background:#FF8C00;padding:5px 2%;margin-bottom:1px;color:#fff;font-size:13px;}
+.PrimeContentBlock{width:100%;}
+.contentPageContener contentside{width:100%;}
+.contentPageContener sidebar{width:98%;margin-top:10px;}
+
+}

@@ -1,0 +1,67 @@
+﻿<html>
+<head>
+<title>DUAST Frame Work</title>	
+<link rel="stylesheet" href="../styles/rtl/style.css" type="text/css" />
+<script type="text/javascript" src="../jq.js"></script>
+</head>
+<body>
+
+	<style>
+	.Demo{
+	width:400px;
+	height:50px;
+	background:#000;
+	float:right;
+	margin:200px;
+	}
+	
+	UpdatbleContener{
+	width:90%;
+	height:40px;
+	float:right;
+	
+	}
+	</style>
+
+<script>
+/// InstantUpdatble
+(function ($) {
+$.fn.InstantUpdatble = function(options){
+
+	var contener = this;
+	var defaults = {
+	
+	}
+	var options = $.extend({}, defaults, options);
+	
+	contener.children("mobileMenu").click(function(){
+		contener.children("a").toggle();
+	});
+	
+	alert();
+
+}
+}(jQuery));
+</script>
+
+
+	
+<div class="Demo" data-action="actions.php">
+	<UpdatbleContener>
+	
+	</UpdatbleContener>
+</div>
+
+
+<script>
+	$(".Demo").click(function(){
+		$(".Demo").InstantUpdatble({});
+	});
+</script>
+
+
+	
+</body>
+
+
+</html>

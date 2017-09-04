@@ -1,0 +1,508 @@
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 400% 0; }
+}
+
+
+.HelpCenterCover{
+width:100%;
+height:320px;
+background:#29D9C2;
+float:Right;
+background-image:url("../../img/supportBg.jpg");
+position:relative;
+text-align:center;
+opacity:0.7;
+background-position: 0px 0px;
+background-repeat: repeat-x;
+animation: animatedBackground 100s linear infinite;
+}
+
+.HelpCenterCoverRight{
+width:100%;
+float:right;
+}
+.HelpCenterCoverLeft{
+width:60%;
+height:40px;
+color:#fff;
+margin:15px 20%;
+text-align:right;
+position:absolute;
+bottom:0px;
+left:0;
+}
+.HelpsocialCels{
+width:auto;
+float:right;
+height:40px;
+line-height:40px;
+font-size:13px;
+opacity:0.9;
+cursor:pointer;
+}
+.HelpsocialCels img{
+float:right;
+width:22px;
+margin-top:10px;
+margin-left:10px;
+margin-right:30px;
+}
+.HelpsocialCels:hover{
+opacity:1;
+}
+.HelpCenterWelcome{
+	width:94%;
+	padding:10px 3%;
+	float:Right;
+	margin:70px 0px 0px 0px;
+	text-align:center;
+	color:#Fff;
+	font-size:25px;
+}
+
+.HelpCenterBody{
+	width:96%;
+	height:auto;
+	padding:20px 2%;
+	float:right;
+	background:#fff;
+	margin:5px 0px;
+	min-height:500px;
+	color:#666;
+	text-align:right;
+	font-size:13px;
+}
+
+
+.HelpCenterCategories{
+width:100%;
+height:auto;
+float:right;
+opacity:0.8;
+background:#fff;
+padding:20px 0px;
+}
+
+.HelpCenterCategories cel{
+width:24%;
+height:140px;
+float:right;
+border-right:1px solid #ccc;
+}
+
+.HelpCenterCategories cel:first-child{
+border-right:0px solid #ccc;
+}
+.HelpCenterCategories cel img{
+width:15%;
+float:right;
+margin:10px 42%;
+}
+.HelpCenterCategories cel span{
+width:100%;
+float:right;
+margin:10px 0%;
+text-align:center;
+color:#555;
+font-size:14px;
+}
+
+.HelpCenterContentTitle{
+width:100%;
+float:Right;
+padding-bottom:20px;
+font-size:14px;
+color:#2F2933;
+text-align:right;
+border-bottom:1px solid #ccc;
+margin-bottom:10px;
+}
+
+.ContactUsBody{
+width:50%;
+float:Right;
+margin:20px 25%;
+min-height:500px;
+text-align:right;
+color:#555;
+}
+.ContactUsTips{
+width:92%;
+float:Right;
+padding:25px 4%;
+background:#f9f9f9;
+font-size:14px;
+}
+
+.ContactUsTips icon{
+width:5%;
+float:right;
+margin-top:2px;
+background:#29D9C2;
+padding:10px;
+border-radius:50px;
+}
+.ContactUsTips icon img{
+width:100%;
+float:right;
+}
+.ContactUsTips h2{
+float:right;
+width:85%;
+height:auto;
+margin-right:3%;
+margin-top:0px;
+margin-bottom:0px;
+font-size:12px;
+font-weight:normal;
+}
+
+.ContactUsFormBody{
+width:90%;
+float:Right;
+padding:20px 5%;
+background:#fff;
+font-size:14px;
+}
+
+.ContactSendStatus{
+width:96%;
+padding:50px 2%;
+float:right;
+margin-top:100px;
+min-height:100px;
+text-align:center;
+background:#BDF271;
+display:none;
+}
+
+.ContactSendStatus img{
+width:50px;
+}
+
+.ContactSendStatus state{
+width:100%;
+margin:30px 0px;
+font-size:14px;
+color:#333;
+float:right;
+}
+
+
+.ContactSendStatusHelp{
+display:none;
+width:96%;
+padding:10px 2%;
+float:right;
+margin-top:1px;
+background:#fff;
+text-align:center;
+font-size:11px;
+color:#777;
+cursor:pointer;
+}
+
+.ContactSendSocial{
+width:90%;
+padding:50px 5%;
+float:right;
+margin-top:100px;
+min-height:100px;
+text-align:right;
+background:#29D9C2;
+display:none;
+}
+
+.ContactSendSocial a{
+width:100%;
+height:20px;
+margin-top:10px;
+float:right;
+padding:10px 0px;
+font-size:13px;
+color:#f0f0f0;
+display:none;
+}
+
+.ContactSendSocial a img{
+float:right;
+width:20px;
+margin-left:10px;
+margin-top:4px;
+}
+
+.ContactSendSocialIconsContener{
+margin-bottom:40px;
+float:right;	
+}
+
+.ContactSendSocialTitle{
+width:100%;
+margin-bottom:0px;
+float:Right;
+color:#fff;
+font-size:13px;
+}
+
+
+.FaQBody{
+width:80%;
+float:right;
+margin:10px 10%;
+min-height:70px;
+text-align:right;	
+}
+
+.FaQDiscription{
+width:96%;
+float:right;
+padding:20px 2%;
+background:#FF8C00;
+color:#fff;
+font-size:13px;
+margin-bottom:10px;
+}
+
+.FaQDiscription img{
+float:right;
+width:30px;
+margin-left:20px;
+}
+
+.FaQCell{
+width:96%;
+float:right;
+padding:0px 2%;
+background:#fff;
+color:#666;
+font-size:13px;
+margin-top:1px;
+}
+
+.FaQCell Quition{
+width:100%;
+float:Right;
+min-height:25px;
+cursor:pointer;
+padding:20px 0px;
+color:#666;
+font-size:13px;
+}
+
+.FaQCell Quition img{
+width:25px;
+float:right;
+margin-left:20px;
+}
+
+.FaQCell Answer{
+width:90%;
+float:Right;
+min-height:20px;
+cursor:pointer;
+border-top:1px solid #f0f0f0;
+padding:20px 40px;
+color:#777;	
+font-size:13px;
+display:none;
+}
+
+.TicketCelsContener{
+width:70%;
+margin:0px 11% 1px 15%;
+float:right;
+direction:rtl;
+}
+
+ParentContener{
+display:none;
+width:100%;
+float:right;
+margin-top:10px;
+margin-bottom:20px;
+}
+
+
+.TicketOptions{
+width:94%;
+padding:10px 2%;
+margin:0px 1%;
+float:right;
+background:#fff;
+}
+
+.TicketOptions button{
+float:left;
+}
+
+.ClosedTicket{
+width:94%;
+padding:20px 2%;
+margin:1px 1%;
+float:right;
+background:#FFFFA6;
+font-size:12px;
+text-align:right;
+direction:rtl;
+color:#555;
+}
+
+.NoTicketsResults{
+width:50%;
+padding:50px 5%;
+margin:100px 20%;
+float:right;
+background:#fff;
+text-align:center;
+}
+
+.NoTicketsResults span{
+width:100%;
+float:right;
+font-size:14px;
+color:#555;
+margin-top:20px;
+}
+
+.NoTicketsResults span p{
+font-size:12px;
+color:#777;
+}
+
+TicketInfo{
+width:100%;
+float:right;
+color:#666;
+font-size:12px;
+padding:10px 0px;
+text-align:right;
+}
+
+TicketInfo b{
+color:#444;
+}
+
+.TicketCelFace{
+width:96%;
+padding:10px 2%;
+margin-bottom:1px;
+float:right;
+background-color:#fff;
+cursor:pointer;
+}
+
+.TicketCelFace thumb{
+width:45px;
+height:45px;
+line-height:45px;
+text-align:center;
+float:right;
+background-color:#FF8C00;
+background-size:50%;
+border-radius:55px;
+}
+
+.TicketCelFace content{
+float:right;
+width:60%;
+margin-right:2%;
+height:50px;
+}
+.TicketCelFace content state{
+float:right;
+width:100%;
+height:24px;
+text-align:right;
+font-size:11px;
+color:#666;
+}
+.TicketCelFace content serial{
+float:right;
+width:100%;
+height:25px;
+text-align:right;
+font-size:13px;
+color:#FF8C00;
+font-weight:bold;
+}
+
+.TicketCel{
+width:94%;
+padding:10px 2%;
+margin:0px 1% 1px 1%;
+float:right;
+background-color:#fff;
+}
+
+
+.TicketCel thumb{
+width:40px;
+height:40px;
+line-height:40px;
+text-align:center;
+float:right;
+background-color:#29D9C2;
+border-radius:55px;
+}
+
+.TicketCel content{
+float:right;
+width:60%;
+margin-right:2%;
+margin-top:5px;
+min-height:30px;
+text-align:right;
+font-size:12px;
+color:#666;
+}
+
+.TiketReplayCel{
+width:94%;
+padding:10px 2%;
+margin:0px 1%;
+float:right;
+background:#fff;
+min-height:20px;
+}
+
+.TiketReplayCel textarea{
+width:100%;
+padding:10px 2%;
+margin-top:10px;
+float:right;
+background:#fff;
+height:80px;
+border-top:0px;
+border-right:0px;
+border-left:0px;
+border-bottom:2px solid #FF8C00;
+font-size:13px;
+color:#555;
+text-align:right;
+}
+
+.TiketReplayCel button{
+float:left;
+margin:10px 0px;
+}
+
+@media screen and (max-width:500px){ 
+
+.ContactUsBody{width:100%;margin:0px;}
+.ContactSendStatus state{font-size:13px;}
+.ContactUsTips h2{width:72%;}
+.ContactUsTips icon{width:10%;}
+.ContactUsTips h2{width:72%;}
+
+.HelpCenterCover {margin-top:50px;height:250px;font-size:14px;}
+.HelpCenterWelcome{font-size:20px;}
+
+.HelpCenterCategories cel {height:50px;width:100%;text-align:right;}
+.HelpCenterCategories cel img{width:20px;margin:15px 10px;}
+.HelpCenterCategories cel span{font-size:12px;width:auto;}
+
+.HelpCenterContentTitle{font-size:13px;padding-bottom: 8px;}
+
+.TicketCelsContener{width:100%;margin:1px 0px 0px 0px;}
+}

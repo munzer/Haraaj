@@ -1,0 +1,88 @@
+# .htaccess mod_rewrite
+# DuScript
+
+RewriteEngine On 
+
+
+
+
+RewriteCond %(REQUEST_FILENAME) !-d
+RewriteCond %(REQUEST_FILENAME) !-f
+RewriteCond %(REQUEST_FILENAME) !-1
+
+
+
+RewriteRule .*.php - [L]
+RewriteRule .*.js - [L]
+RewriteRule .*.css - [L]
+RewriteRule .*.jpg - [L]
+RewriteRule .*.png - [L]
+RewriteRule .*.gif - [L]
+RewriteRule .*.GIF - [L]
+RewriteRule .*.jpeg - [L]
+RewriteRule .*.jpg - [L]
+RewriteRule .*.JPG - [L]
+RewriteRule .*.JPEG - [L]
+RewriteRule .*.PNG - [L]
+
+
+
+
+RewriteCond %{REQUEST_URI} !^(.*.php)$
+RewriteCond %{REQUEST_URI} !^(.*.js)$
+RewriteCond %{REQUEST_URI} !^(.*.css)$
+
+
+
+
+RewriteRule ^([a-zA-Z0-9-_]+)([/]*)$       main.php?page=$1 [L,QSA,NC]
+RewriteRule ^(includes)/([a-zA-Z]+)$       includes.php?page=$2&AjaxPages=true [L,QSA,NC]
+
+
+#My Acount Panil
+RewriteRule ^(includes)/(MyAcount)/([a-zA-Z]+)$    includes.php?page=MyAcount&SubPage=$3&AjaxPages=true [L,QSA,NC]
+RewriteRule ^(MyAcount)/([a-zA-Z]+)$                main.php?page=MyAcount&SubPage=$2 [L,QSA,NC]
+
+
+
+#Control Panel
+RewriteRule ^(Dashboard)/([a-zA-Z]+)$  main.php?page=Dashboard&Panil=$2 [L,QSA,NC]
+RewriteRule ^(includes)/(Dashboard)/([a-zA-Z]+)$   includes.php?page=Dashboard&Panil=$3&AjaxPages=true [L,QSA,NC]
+
+RewriteRule ^(Dashboard)/([a-zA-Z]+)/([0-9]+)$   main.php?page=Dashboard&Panil=$2&sub=$3 [L,QSA,NC]
+RewriteRule ^(includes)/(Dashboard)/([a-zA-Z]+)/([0-9]+)$ includes.php?page=Dashboard&Panil=$3&sub=$4&AjaxPages=true [L,QSA,NC]
+
+RewriteRule ^(Dashboard)/(Plugin)/([a-zA-Z]+)$   main.php?page=Dashboard&Panil=$2&Plugin=$3 [L,QSA,NC]
+RewriteRule ^(includes)/(Dashboard)/(Plugin)/([a-zA-Z]+)$ includes.php?page=Dashboard&Panil=$3&Plugin=$4&AjaxPages=true [L,QSA,NC]
+
+
+#Help Center
+RewriteRule ^(help)/([a-zA-Z]+)$  main.php?page=help&category=$2 [L,QSA,NC]
+RewriteRule ^(includes)/(Dashboard)/([a-zA-Z]+)$   includes.php?page=help&category=$3&AjaxPages=true [L,QSA,NC]
+
+
+#Messages
+RewriteRule ^(messages)/([a-zA-Z]+)$  main.php?page=messages&category=$2 [L,QSA,NC]
+RewriteRule ^(includes)/(Dashboard)/([a-zA-Z]+)$   includes.php?page=messages&category=$3&AjaxPages=true [L,QSA,NC]
+
+#One Single Message
+RewriteRule ^(message)/([0-9]+)$  main.php?page=message&user=$2 [L,QSA,NC]
+RewriteRule ^(includes)/(Dashboard)/([0-9]+)$   includes.php?page=message&user=$3&AjaxPages=true [L,QSA,NC]
+
+
+#Content
+RewriteRule ^(content)/([0-9]+)/(.*)$              main.php?page=$1&id=$2&title=$3 [L,QSA,NC]
+
+#categorie
+RewriteRule ^(categorie)/([0-9]+)/(.*)$              main.php?page=$1&id=$2&title=$3 [L,QSA,NC]
+
+
+DirectoryIndex main.php
+#RewriteRule ^index.php$ main.php?page=index [L]
+#RewriteRule ^index$        main.php?page=index [L]
+
+
+RewriteRule ^sitemap.xml$        sitemap.php [L,QSA,NC]
+
+
+#ErrorDocument 404 http://www.Example.com/index
